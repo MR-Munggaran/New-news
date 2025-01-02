@@ -53,7 +53,7 @@ class SlideController extends Controller
             $data = new Slide();
             $data->judul_slide = $request->judul_slide;
             $data->link = '-';
-            $data->gambar = $request->file('gambar')->store('slide');
+            $data->gambar = $request->file('gambar')->store('slide', 'public');
             $data->status = $request->status;
             $data->artikel_id = $request->artikel_id;
             $data->save();

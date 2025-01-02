@@ -49,7 +49,7 @@ class ArtikelController extends Controller
         ]);
         $artikel = new Artikel;
         $artikel->slug = Str::slug($request->judul);
-        $artikel->gambar = $request->file('gambar')->store('artikel');
+        $artikel->gambar = $request->file('gambar')->store('artikel', 'public');
         $artikel->user_id = Auth::id();
         // $artikel->is_active= 1;
         $artikel->views = 0;
@@ -124,7 +124,7 @@ class ArtikelController extends Controller
                 'is_active' => $request->is_active,
                 'slug' => Str::slug($request->judul),
                 'user_id' => Auth::id(),
-                'gambar' => $request->file('gambar')->store('artikel')
+                'gambar' => $request->file('gambar')->store('artikel', 'public')
             ]);
 
             $artikel->fill($request->except('gambar')); // Jangan sertakan 'gambar' di sini karena sudah diatur sebelumnya

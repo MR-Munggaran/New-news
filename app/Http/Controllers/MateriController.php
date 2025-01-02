@@ -37,7 +37,7 @@ class MateriController extends Controller
         ]);
         $materi = new Materi;
         $materi->slug = Str::slug($request->judul_materi);
-        $materi->gambar_materi = $request->file('gambar_materi')->store('materi');
+        $materi->gambar_materi = $request->file('gambar_materi')->store('materi', 'public');
 
         // Isi sisa atribut menggunakan fillable
         $materi->fill($request->except('gambar_materi')); // Jangan sertakan 'gambar' di sini karena sudah diatur sebelumnya
@@ -78,7 +78,7 @@ class MateriController extends Controller
                 'is_active' => $request->is_active,
                 'link' => $request->link,
                 'slug' => Str::slug($request->judul_materi),
-                'gambar_materi' => $request->file('gambar_materi')->store('materi')
+                'gambar_materi' => $request->file('gambar_materi')->store('materi', 'public')
             ]);
 
             $materi->fill($request->except('gambar_materi')); // Jangan sertakan 'gambar' di sini karena sudah diatur sebelumnya
