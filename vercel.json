@@ -2,7 +2,7 @@
     "version": 2,
     "framework": null,
     "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.6.0" }
+        "api/index.php": { "runtime": "vercel-php@0.4.1" }
     },
     "routes": [
         { "src": "/build/(.*)", "dest": "/public/build/" },
@@ -29,6 +29,7 @@
         "DB_HOST": "junction.proxy.rlwy.net",
         "DB_PORT": "59684",
         "DB_DATABASE": "railway",
-        "DB_USERNAME": "root"
+        "DB_USERNAME": "root",
+        "DB_PASSWORD": "XSFmLaZDBsnwKznmSuQlxPnElVdPgIVt"
     }
 }
