@@ -3,7 +3,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "composer install && php artisan key:generate && php artisan migrate && php artisan storage:link && vite build"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.20",
