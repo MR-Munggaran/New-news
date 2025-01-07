@@ -36,7 +36,6 @@ class KategoriController extends Controller
         ]);
 
         $kategori = Kategori::create([
-
             'nama' => $request->nama,
             'slug' => Str::slug($request->nama)
         ]);
